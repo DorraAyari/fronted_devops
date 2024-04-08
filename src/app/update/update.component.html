@@ -1,0 +1,15 @@
+<!-- src/app/update/update.component.html -->
+
+<h2>Update Chambre</h2>
+
+<form (submit)="updateChambre()">
+  <div>
+    <label for="numero">Numero chambre :</label>
+    <input type="text" id="nom" [(ngModel)]="chambre.numChambre" name="numero" required>
+  </div>
+  <div>
+    <label for="status">Status :</label>
+    <input type="text" id="status" [(ngModel)]="chambre.status" name="status" required>
+  </div>
+  <button type="submit">Update</button>
+</form>
