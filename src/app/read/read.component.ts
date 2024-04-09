@@ -22,7 +22,6 @@ export class ReadComponent implements OnInit {
   }
 
   delete(id: number): void {
-
     if (confirm('Are you sure you want to delete this chambre?')) {
       this.chambreService.delete(id)
         .subscribe(() => {
@@ -30,11 +29,20 @@ export class ReadComponent implements OnInit {
         });
     }
   }
-
   goToUpdate(id: number): void {
-    this.router.navigate(['/update', id]);
+    // Ensure id is valid before navigating
+    if (id) {
+      // Fetch chambre details by ID and then navigate to update component
+      this.chambreService.getById(id)
+        .subscribe(chambre => {
+          // Navigate to update component with the fetched chambre details
+          this.router.navigate(['/update', id]);
+        });
+    } else {
+      console.error('Invalid id:', id);
+    }
   }
-
+  
   goToAdd(): void {
     this.router.navigate(['/create']);
   }

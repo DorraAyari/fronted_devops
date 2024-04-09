@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ChambreService {
 
-  private baseUrl = 'http://172.20.10.2:8087/chambre';
+  private baseUrl = 'http://localhost:8089/chambre';
 
   constructor(private http: HttpClient) { }
 
@@ -15,13 +15,14 @@ export class ChambreService {
     return this.http.get<any[]>(`${this.baseUrl}/findAll`);
   }
 
-  add(universite: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/add`, universite);
+  add(chambre: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/add`, chambre);
   }
 
-  update(id: number, universite: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/update/${id}`, universite);
+  update(id: number, chambre: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/update/${id}`, chambre);
   }
+  
 
   delete(id: any): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);

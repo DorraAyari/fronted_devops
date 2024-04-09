@@ -22,14 +22,22 @@ export class UpdateComponent implements OnInit {
          this.chambre = data;
        });
   }
-
   updateChambre(): void {
-    // Implement your logic to update university here
+    // Implement your logic to update chambre here
     console.log(this.chambre); // Log the form data for testing
-    // Example: Call a service method to update university
-     this.chambreService.update(this.id, this.chambre)
-       .subscribe(() => {
-         this.router.navigate(['/read']); // Navigate back to the universities page after updating
-       });
+    // Example: Call a service method to update chambre
+    this.chambreService.update(this.id, this.chambre)
+      .subscribe(updatedChambre => {
+        // Assuming the server returns the updated chambre object
+        console.log('Updated chambre:', updatedChambre);
+        // Optionally, update the local chambre object with the updated data
+        this.chambre = updatedChambre;
+        // Navigate back to the read page after updating
+        this.router.navigate(['/read']);
+      }, error => {
+        // Handle errors if any
+        console.error('Error updating chambre:', error);
+      });
   }
+  
 }

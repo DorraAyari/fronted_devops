@@ -16,9 +16,10 @@
       <td>{{ chambre.numeroChambre }}</td>
       <td>{{ chambre.statut }}</td>
       <td>
-        <button (click)="goToUpdate(chambre.id)">Modifier</button>
-        <button (click)="delete(chambre.id)">Supprimer</button>
+        <button (click)="goToUpdate(chambre.idChambre)">Modifier</button>
+        <button (click)="delete(chambre.idChambre)">Delete</button>
       </td>
+      
     </tr>
   </table>
   

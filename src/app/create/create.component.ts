@@ -15,12 +15,17 @@ export class CreateComponent {
   constructor(private chambreService: ChambreService, private router: Router) { }
 
   addChambre(): void {
-    // Implement your create logic here
-    console.log(this.chambre); // Log the data for testing
-    // Example: Call a service method to create data
-     this.chambreService.add(this.chambre)
-       .subscribe(() => {
-         this.router.navigate(['/read']); // Navigate back to the read page after creation
-       });
+    // Assign the value of numeroChambre from the input field to chambre object
+    this.chambre.numeroChambre = this.chambre.numChambre; // assuming 'numChambre' is the name of your input field
+  
+    // Log the data for testing
+    console.log(this.chambre);
+  
+    // Call the service method to create data
+    this.chambreService.add(this.chambre)
+      .subscribe(() => {
+        this.router.navigate(['/read']); // Navigate back to the read page after creation
+      });
   }
+  
 }
