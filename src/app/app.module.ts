@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router'; // Import RouterModule
 
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './create/create.component';
@@ -24,7 +25,9 @@ import { FormsModule } from '@angular/forms'; // Importez FormsModule
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, // Add HttpClientModule here
-    FormsModule // Add FormsModule to the imports array
+    FormsModule ,
+    RouterModule
+
 
   ],
   providers: [],
