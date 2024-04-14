@@ -16,8 +16,8 @@ RUN npm install
 # Copy the entire project to the working directory
 COPY . .
 
-# Build the Angular app
-RUN ng build --prod
+# Build the Angular app for production
+RUN ng build --configuration=production
 
 # Use Nginx as a web server
 FROM nginx:alpine
