@@ -1,8 +1,0 @@
-version: '3'
-services:
-  SpartacusFoyerAngular:
-    container_name: SpartacusFoyerAngular
-    image: dorraaaaa/angular:latest
-    ports:
-      - "4200:4200"  # Exposer le port 4200 du conteneur sur le port 4200 de la machine hôte
-    restart: always
