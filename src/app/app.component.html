@@ -1,25 +1,2 @@
-<!-- src/app/read/read.component.html -->
-
-<h2>Chambres List</h2>
-
-<button (click)="goToAdd()">Add Chambre</button>
-
-<table>
-    <tr>
-      <th>ID</th>
-      <th>Numéro de chambre</th>
-      <th>Statut</th>
-      <th>Actions</th>
-    </tr>
-    <tr *ngFor="let chambre of chambres">
-      <td>{{ chambre.id }}</td>
-      <td>{{ chambre.numeroChambre }}</td>
-      <td>{{ chambre.statut }}</td>
-      <td>
-        <button (click)="goToUpdate(chambre.idChambre)">Modifier</button>
-        <button (click)="delete(chambre.idChambre)">Delete</button>
-      </td>
-      
-    </tr>
-  </table>
-  
+<app-read></app-read>
+<router-outlet></router-outlet>
