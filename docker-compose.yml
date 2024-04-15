@@ -1,0 +1,7 @@
+version: '3'
+services:
+  angular-aplication:
+      image: dorraaaaa/angular:latest
+    ports:
+      - "4200:80"  # Modifier le port exposé à 4200
+    restart: always
